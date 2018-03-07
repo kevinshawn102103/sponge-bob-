@@ -1,0 +1,39 @@
+from Graphics import *
+def couch ():
+    couch = Rectangle(Point(200,300))
+    couch.draw(win)
+
+
+
+def drawWindow(x, y, width = 90, height = 90):
+    window = Rectangle(Point(x, y), Point(x + width, y + height))
+    l1 = Line(Point(x, y + height//2), Point(x + width, y + height//2))
+    l2 = Line(Point(x + width//2, y), Point(x + width//2, y + height))
+    window.setFill(color( silver ))
+    window.draw(win)
+    l1.draw(win)
+    l2.draw(win)
+
+def drawDoor():
+    door = Rectangle(Point(325, 550), Point(400, 650))
+    door.setFill(color( brown ))
+    door.draw(win)
+    knob = Circle(Point(385,610), 5)
+    knob.setFill(color(white))
+    knob.draw(win)
+
+
+def main():
+    couch()
+    drawDoor()
+    win.getMouse()
+    win.close()
+
+win = GraphWin("My House", 1000, 650)
+win.setBackground("white")
+main()
+
+
+
+
+
